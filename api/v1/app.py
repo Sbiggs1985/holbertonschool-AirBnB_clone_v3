@@ -4,6 +4,7 @@ Creating files for an api
 """
 from flask import Flask
 from api.v1.views import app_views
+from views.app_views import app_views
 from flask_cors import CORS
 
 app = Flask(__name__)
