@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Starts up a copy of a flask-app
+Creating files for an api
 """
 from api.v1.views import app_views
 from flask import Flask
