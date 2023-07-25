@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This is the api file with appropriate imports
+index
 """
 
 from flask import jsonify
