@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-"""
-This is me documenting this file for the checker.
-"""
+"""creating a 404 page"""
+
 
 from flask import Flask, jsonify
 from flask_cors import CORS
@@ -17,30 +16,20 @@ CORS(app, resources={r"/*": {"origins": "0.0.0.0"}})
 
 app.register_blueprint(app_views)
 
-
-@app.teardown_appcontext
+@app.teardown_appcontent
 def teardown(exception):
-    """
-    teardown function
-    """
+    """teardown function"""
     storage.close()
-
 
 @app.errorhandler(404)
 def handle_404(exception):
-    """
-    handles 404 error
-    :return: returns 404 json
-    """
-    data = {
-        "error": "Not found"
-    }
+    """handles 404 :return 404 json"""
+    data = {"error": "Not found"}
 
     resp = jsonify(data)
     resp.status_code = 404
 
     return(resp)
-
 
 if __name__ == "__main__":
     app.run(getenv("HBNB_API_HOST"), getenv("HBNB_API_PORT"))
