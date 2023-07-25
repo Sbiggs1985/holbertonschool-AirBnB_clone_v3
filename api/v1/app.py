@@ -2,8 +2,8 @@
 """
 Starts up a copy of a flask-app
 """
-from flask import Flask
 from api.v1.views import app_views
+from flask import Flask
 from flask_cors import CORS
 
 app = Flask(__name__)
